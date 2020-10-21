@@ -1,0 +1,9 @@
+`// Include the Servo library #include <Servo.h> // Declare the Servo pin int servoPin1 = 3; int servoPin2 = 4; // Create a servo object Servo Servo1; Servo Servo2; // Machine state int state = 0;
+
+//compteur int compteur = 0;
+
+void setup() { // We need to attach the servo to the used pin number Serial.begin(9600); Servo1.attach(servoPin1); Servo2.attach(servoPin2);
+
+} void loop() { // Make servo go to 180 degrees if (state == 0) { Servo1.write(180); Servo2.write(0); compteur = compteur + 1; if (compteur == 10) { state = 2; compteur = 0; } } if (state == 1) { //marche arrière Serial.println(7); Servo1.write(0); Servo2.write(180); compteur = compteur + 1; if (compteur == 10) { state = 3; compteur = 0; } }
+
+if (state == 2) { //stop avant marche arrière Servo1.write(90); Servo2.write(90); compteur = compteur + 1; if (compteur == 6) { state = 1; compteur = 0; } } if (state == 3) { //stop avant marche avant Servo1.write(90); Servo2.write(90); compteur = compteur + 1; if (compteur == 5) { state = 0; compteur = 0; } } delay(1000); }`

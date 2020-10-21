@@ -1,4 +1,4 @@
-`// Include the Servo library #include <Servo.h> // Declare the Servo pin int servoPin1 = 3; int servoPin2 = 4; // Create a servo object Servo Servo1; Servo Servo2; // Machine state int state = 0;
+// Include the Servo library #include <Servo.h> // Declare the Servo pin int servoPin1 = 3; int servoPin2 = 4; // Create a servo object Servo Servo1; Servo Servo2; // Machine state int state = 0;
 
 //compteur int compteur = 0;
 
